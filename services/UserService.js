@@ -72,10 +72,10 @@ const login = async(model) => {
             }
         }
         
-        // const accessToken = jwt.sign({userId: user._id}, secreteKey, {expiresIn: '1h'});
-        const refreshToken = jwt.sign({userId: user._id}, refreshTokenSecreteKey, {expiresIn: '1h'})
+        const accessToken = jwt.sign({userId: user._id}, secreteKey, {expiresIn: '1h'});
+        // const refreshToken = jwt.sign({userId: user._id}, refreshTokenSecreteKey, {expiresIn: '15m'})
 
-        RefreshToken.create({userId: user._id, refreshToken});
+        // RefreshToken.create({userId: user._id, refreshToken});
         
         return {
             status: 200,
@@ -91,4 +91,5 @@ const login = async(model) => {
         }
     }
 }
+
 module.exports = { createUser, getUsers, login }

@@ -125,7 +125,6 @@ userRoute.post('/signup', userController.createUserController);
  *                   properties:
  *                     token:
  *                       type: string
- *                       example: your_jwt_token_here
  *       '401':
  *         description: Unauthorized - Invalid credentials
  *         content:

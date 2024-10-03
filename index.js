@@ -30,12 +30,11 @@ db.on('error', (error) => {
 })
 
 const authenticateUser = async(req, res, next) => {
-    console.log('aaccessToken : ', req.headers.authorization.split(' ')[1])
     try {
-        const accessToken = req.headers.authorization.split(' ')[1];
-        if(!accessToken) {
-            return res.status(401).json({message: 'AccessToken not found'});
-        }
+      if(!req.headers.authorization) {
+        return res.status(401).json({message: 'AccessToken not found'});
+      }
+      const accessToken = req.headers.authorization.split(' ')[1];
 
         const decodeToken = jwt.verify(accessToken, secreteKey);
         req.user = {id: decodeToken.userId}
