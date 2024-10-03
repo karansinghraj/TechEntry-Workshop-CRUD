@@ -2,14 +2,6 @@ const express = require('express');
 const userRoute = express.Router();
 const userController = require('../controllers/UserController');
 
-
-/**
- * @swagger
- * tags:
- *   name: User Management APIs
- *   description: Endpoints for managing user records
- */
-
 /**
  * @swagger
  * /user:
@@ -66,7 +58,7 @@ userRoute.get('/', userController.getUsersController);
 
 /**
  * @swagger
- * /user:
+ * /user/signup:
  *   post:
  *     summary: Signup API
  *     description: Add a new user to the system.
