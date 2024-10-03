@@ -68,9 +68,9 @@ userRoute.get('/', userController.getUsersController);
  * @swagger
  * /user:
  *   post:
- *     summary: Create User
+ *     summary: Signup API
  *     description: Add a new user to the system.
- *     tags: [User Management APIs]
+ *     tags: [Signup API]
  *     requestBody:
  *       required: true
  *       content:
@@ -82,10 +82,6 @@ userRoute.get('/', userController.getUsersController);
  *                 type: string
  *                 description: The full name of the user.
  *                 example: "John Doe"
- *               username:
- *                 type: string
- *                 description: The unique username for the user.
- *                 example: "johndoe"
  *               email:
  *                 type: string
  *                 description: The email address of the user.

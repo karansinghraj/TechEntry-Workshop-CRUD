@@ -5,10 +5,6 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    username: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         required: true
@@ -19,7 +15,7 @@ const UserSchema = mongoose.Schema({
     },
     role: {
         type: String,
-        required: true
+        required: false
     }
 },
 {
