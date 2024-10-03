@@ -12,6 +12,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const secreteKey = 'fjbsd343FWEigWfds45gousrdgo';
 const refreshTokenSecreteKey = 'fjbsd343FWEigWfds45gofgdf32DWEusrdgo';
+const cors = require('cors');
 
 app.use(express.json());
 
@@ -123,5 +124,6 @@ app.use(
   })
 );
 
+app.use(cors())
 app.use('/employees', authenticateUser, authorizeUser(['user']),  employeeRouter);
 app.use('/user', userRoute);
