@@ -4,60 +4,6 @@ const userController = require('../controllers/UserController');
 
 /**
  * @swagger
- * /user:
- *   get:
- *     summary: Get All Users
- *     description: Retrieve a list of all users.
- *     tags: [User Management APIs]
- *     responses:
- *       '200':
- *         description: A list of users
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: number
- *                   example: 200
- *                 message:
- *                   type: string
- *                   example: Users retrieved successfully
- *                 data:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       id:
- *                         type: string
- *                         example: "123"
- *                       username:
- *                         type: string
- *                         example: "johndoe"
- *                       email:
- *                         type: string
- *                         example: "johndoe@example.com"
- *                       role:
- *                         type: string
- *                         example: "admin"
- *       '500':
- *         description: Internal Server Error
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: number
- *                   example: 500
- *                 message:
- *                   type: string
- *                   example: Internal Server Error
-*/
-userRoute.get('/', userController.getUsersController);
-
-/**
- * @swagger
  * /user/signup:
  *   post:
  *     summary: Signup API
