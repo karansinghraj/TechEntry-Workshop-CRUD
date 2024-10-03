@@ -72,8 +72,8 @@ const login = async(model) => {
             }
         }
         
-        const accessToken = jwt.sign({userId: user._id}, secreteKey, {expiresIn: '1h'});
-        const refreshToken = jwt.sign({userId: user._id}, refreshTokenSecreteKey, {expiresIn: '15m'})
+        // const accessToken = jwt.sign({userId: user._id}, secreteKey, {expiresIn: '1h'});
+        const refreshToken = jwt.sign({userId: user._id}, refreshTokenSecreteKey, {expiresIn: '1h'})
 
         RefreshToken.create({userId: user._id, refreshToken});
         
@@ -81,7 +81,6 @@ const login = async(model) => {
             status: 200,
             message: 'LOGGEDIN SUCCESSFULLY',
             accessToken,
-            refreshToken
         }
     } catch(error) {
         console.log('Error : ', error.message);
