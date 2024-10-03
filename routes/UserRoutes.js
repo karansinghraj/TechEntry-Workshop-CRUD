@@ -137,7 +137,7 @@ userRoute.get('/', userController.getUsersController);
  *                   type: string
  *                   example: Internal Server Error
  */
-userRoute.post('/', userController.createUserController);
+userRoute.post('/signup', userController.createUserController);
 
 /**
  * @swagger
