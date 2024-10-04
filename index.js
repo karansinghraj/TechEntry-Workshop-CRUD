@@ -125,5 +125,5 @@ app.use(
 );
 
 app.use(cors( {origin: "*"}))
-app.use('/employees', authenticateUser, authorizeUser(['user']),  employeeRouter);
+app.use('/employees', authenticateUser,  employeeRouter);
 app.use('/user', userRoute);
